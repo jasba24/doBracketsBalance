@@ -1,21 +1,17 @@
-const doBracketsBalance = string => {
-  let openBrackets = string.match(/\[.*?/g) ?? []
-  let closeBrackets = string.match(/\].*?/g) ?? []
-  let openKeys = string.match(/\{.*?/g) ?? []
-  let closeKeys = string.match(/\}.*?/g) ?? []
-  let openParenthesis = string.match(/\(.*?/g) ?? []
-  let closeParenthesis = string.match(/\).*?/g) ?? []
+const doBracketsBalance = string => {}
 
-  if (
-    openBrackets.length == closeBrackets.length &&
-    openKeys.length == closeKeys.length &&
-    openParenthesis.length == closeParenthesis.length
-  ) {
-    return true
-  } else {
-    return false
-  }
+const splitCharacter = expression => {
+  const symbols = []
+  expression
+    .split(/([\[\]\{\}\(\)])/)
+    .map(e =>
+      ['[', ']', '{', '}', '(', ')'].includes(e) ? symbols.push(e) : ''
+    )
+
+  return symbols
 }
+
+
 
 module.exports = {
   doBracketsBalance
