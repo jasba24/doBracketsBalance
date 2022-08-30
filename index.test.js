@@ -31,5 +31,9 @@ describe('Code Enterview', () => {
     const result = doBracketsBalance('[}]{')
     expect(expected).toEqual(result)
   })
+  test('Should "[{}]{" return false', () => {
+    const expected = false
+    const result = doBracketsBalance('[}]{')
+    expect(expected).toEqual(result)
+  })
 })
-b
